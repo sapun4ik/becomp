@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Template</title>
+	<meta name="description" content="Template" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" href="apple-icon.png">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link rel="stylesheet" href="/resources/css/normalize.css" th:href="@{/resources/css/normalize.css}">
+	<link rel="stylesheet" href="/resources/css/bootstrap.min.css" th:href="@{/resources/css/bootstrap.min.css}">
+	<link rel="stylesheet" href="/resources/css/font-awesome.min.css" th:href="@{/resources/css/font-awesome.min.css}">
+	<link rel="stylesheet" href="/resources/css/themify-icons.css" th:href="@{/resources/css/themify-icons.css}">
+	<link rel="stylesheet" href="/resources/css/flag-icon.min.css" th:href="@{/resources/css/flag-icon.min.css}">
+	<link rel="stylesheet" href="/resources/css/cs-skin-elastic.css" th:href="@{/resources/css/cs-skin-elastic.css}">
+
+	<link rel="stylesheet" href="/resources/scss/style.css" th:href="@{/resources/scss/style.css}">
+	<link href="/resources/css/lib/vector-map/jqvmap.min.css" th:href="@{/resources/css/lib/vector-map/jqvmap.min.css}" rel="stylesheet">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+</head>
+<body>
+<body class="bg-dark">
+<div th:if="${(param.error != null) and (param.error[0] == 'true')}" class="alert  alert-danger alert-dismissible fade show" role="alert">
+	<span class="badge badge-pill badge-danger">Error</span>
+	<span th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null}">
+        <span th:text="#{session[SPRING_SECURITY_LAST_EXCEPTION]}">Invalid credentials</span>
+    </span>
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<div layout:fragment="bod-content">
+
+</div>
+
+<script src="/resources/js/vendor/jquery-2.1.4.min.js" th:src="@{/resources/js/vendor/jquery-2.1.4.min.js}"></script>
+<script src="/resources/js/popper.min.js" th:src="@{/resources/js/popper.min.js}"></script>
+<script src="/resources/js/plugins.js" th:src="@{/resources/js/plugins.js}"></script>
+<script src="/resources/js/main.js" th:src="@{/resources/js/main.js}"></script>
+
+</body>
+</html>

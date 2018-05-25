@@ -1,0 +1,54 @@
+<!doctype html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{security/template.html}">
+<head>
+    <title th:text="#{page.login.title}"></title>
+    <meta name="description" th:content="#{page.login.description}" >
+</head>
+<body class="bg-dark">
+<div layout:fragment="bod-content">
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="login-form">
+                    <form name='f' action="login" method='POST'>
+                        <div class="form-group">
+                            <label th:text="#{page.login.label.email}"/>
+                            <input type="email" name="username" class="form-control" th:placeholder="#{page.login.input.placeholder.email}">
+                        </div>
+                        <div class="form-group">
+                            <label th:text="#{page.login.label.password}"/>
+                            <input type="password" name="password" class="form-control" th:placeholder="#{page.login.input.placeholder.password}"/>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="rememberme" name="remember-me"> <span th:text="#{page.login.checkbox.rememberme}"/>
+                            </label>
+                            <label class="pull-right">
+                                <a th:href="@{/forget}" th:text="#{page.login.link.forgottenPassword}"/>
+                            </label>
+
+                        </div>
+                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" th:text="#{page.login.button.signIn}"/>
+                        <div class="social-login-content">
+                            <div class="social-button">
+                                <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i><span th:text="#{page.login.button.signInFacebook}"/></button>
+                                <button type="button" class="btn social twitter btn-flat btn-addon mt-2"><i class="ti-twitter"></i><span th:text="#{page.login.button.signInTwitter}"/></button>
+                            </div>
+                        </div>
+                        <div class="register-link m-t-15 text-center">
+                            <p><span th:text="#{page.login.text.signUn}"/> <a th:href="@{/registration}" th:text="#{page.login.link.signUn}"/></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

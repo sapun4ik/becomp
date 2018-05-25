@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{security/template.html}">
+<head>
+    <title th:text="#{page.login.title}"></title>
+    <meta name="description" th:content="#{page.login.description}" >
+</head>
+<body class="bg-dark">
+<div layout:fragment="bod-content">
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="login-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-flat m-b-15">Submit</button>
+                        <div class="register-link m-t-15 text-center">
+                            <p>Already have account ? <a th:href="@{/login}" > Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
